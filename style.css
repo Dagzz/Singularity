@@ -1,0 +1,599 @@
+@font-face {
+  font-family: "Rajdhani";
+  src: url("assets/fonts/Rajdhani/Rajdhani-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rajdhani";
+  src: url("assets/fonts/Rajdhani/Rajdhani-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rajdhani";
+  src: url("assets/fonts/Rajdhani/Rajdhani-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+video {
+  opacity: 0.8;
+}
+
+#contenu {
+  display: block;
+  height: 80%;
+}
+
+input[name="tabs"] {
+  display: none;
+}
+
+/* ====================================================
+   Modal Version Selection
+   ==================================================== */
+.modal {
+  display: flex;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: transparent;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  padding: 20px 40px;
+  text-align: center;
+  color: white;
+  background-color: black;
+  border: 1px solid white;
+  font-family: "Rajdhani";
+  opacity: 0.9;
+}
+
+.modal-content:hover {
+  border: 1px solid #b44f1e;
+}
+
+.modal-content h2 {
+  margin-bottom: 15px;
+}
+
+.modal-content p {
+  margin-bottom: 25px;
+}
+
+.modal form {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.modal form button {
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  font-size: 1.2em;
+}
+
+.modal form button:hover {
+  border: 1px solid #b44f1e;
+  background-color: transparent;
+  color: #b44f1e;
+}
+
+/* Masquer le modal par défaut (via JavaScript) */
+.modal.hidden {
+  display: none;
+}
+/* ====================================================
+   Navigation Styles
+   ==================================================== */
+nav {
+  position: fixed;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 10px 0px;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: top 1s ease, bottom 1s ease;
+}
+
+/* Logo */
+.nav-logo {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease-in-out;
+  cursor: crosshair;
+  margin: 0px 0px 0px 30px;
+}
+
+.nav-logo:hover {
+  box-shadow: 0 0 15px -2px rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  transform: scale(1.05);
+}
+
+/* Menu items */
+.nav-items {
+  display: flex;
+  width: 80%;
+  align-items: center;
+  justify-content: center;
+}
+
+nav label.menu-item {
+  width: 100%;
+  padding: 20px 30px;
+  color: #fff;
+  text-align: center;
+  transition: color 0.9s ease-in-out;
+  cursor: crosshair;
+  font-family: "Rajdhani";
+  font-weight: 700;
+}
+
+nav label.menu-item:hover {
+  color: #b44f1e;
+  transform: scale(1.05);
+}
+
+nav label.menu-item {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.menu-icon {
+  display: none;
+}
+
+.menu-text {
+  display: inline;
+}
+
+/* Toggle Sound Button */
+.toggle-sound-button {
+  top: 10px;
+  width: 70px;
+  height: 40px;
+  cursor: crosshair;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  background-color: black;
+  opacity: 0.8;
+}
+
+.sound-icon {
+  position: absolute;
+  width: 70px;
+  height: 40px;
+  border: 1px solid white;
+  border-radius: 1px;
+}
+
+.hover-icon {
+  opacity: 0;
+}
+
+.toggle-sound-button:hover .hover-icon {
+  opacity: 1;
+}
+
+.toggle-sound-button:hover .sound-icon:not(.hover-icon) {
+  opacity: 0;
+}
+
+/* ====================================================
+   Vertical Footer
+   ==================================================== */
+
+.vertical-footer {
+  position: fixed;
+  left: 0;
+  top: 60%;
+  transform: rotate(-90deg);
+  transform-origin: left top;
+  padding: 0px;
+  z-index: 1000;
+}
+
+.vertical-footer label, a {
+  display: inline-block;
+  margin: 0 5px;
+  cursor: crosshair;
+  font-family: "Rajdhani";
+  font-weight: 300;
+  color: white;
+}
+
+.vertical-footer label:hover {
+  transform: scale(1.05);
+}
+
+/* Link appear */
+.visible {
+  text-decoration: none;
+}
+
+.visible:hover {
+  color: #ff9933;
+}
+
+/* ====================================================
+   Content Section
+   ==================================================== */
+#contenu section {
+  display: none;
+}
+
+#tab1:checked ~ #contenu .home,
+#tab2:checked ~ #contenu .projects,
+#tab3:checked ~ #contenu .learn,
+#tab4:checked ~ #contenu .about,
+#tab5:checked ~ #contenu .logs,
+#tab6:checked ~ #contenu .legal {
+  display: flex;
+}
+
+/* Hidden Elements */
+.hidden {
+  display: none;
+}
+
+/* ====================================================
+   Section Base Styles
+   ==================================================== */
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 20px;
+}
+
+/* ====================================================
+   Home Section
+   ==================================================== */
+.home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* ====================================================
+   Projects Section
+   ==================================================== */
+.projects-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.projects-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  margin-left: 20px;
+  padding: 10px;
+  width: 100%;
+  height: 70vh;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.projects-container::-webkit-scrollbar {
+  display: none;
+}
+
+.project {
+  position: relative;
+  flex: 0 0 auto;
+  height: 100%;
+  margin-right: 25px;
+  scroll-snap-align: center;
+}
+
+.normal-image {
+  width: 100%;
+  height: 85%;
+  object-fit: cover;
+  display: block;
+  border: 1px solid white;
+}
+
+.hover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 85%;
+  object-fit: cover;
+  opacity: 0;
+  border: 1px solid white;
+}
+
+.project:hover .hover-image {
+  opacity: 1;
+}
+
+.project:hover .normal-image {
+  opacity: 0;
+}
+
+.project-link {
+  display: block;
+  position: absolute;
+  right: -1px;
+  background-color: transparent;
+  cursor: crosshair;
+  opacity: 0;
+}
+
+.project-link img {
+  border: 1px solid white;
+}
+
+.project:hover .project-link {
+  opacity: 0.8;
+}
+
+.project-link:hover .travel-on {
+  display: block;
+}
+
+.project-link:hover .travel-off {
+  display: none;
+}
+
+/* ====================================================
+   About Section
+   ==================================================== */
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.about-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1vh;
+  margin-left: -35px;
+  margin-top: -30px;
+  height: 93vh;
+}
+
+.about-links a {
+  font-family: "Rajdhani";
+  font-size: 1.2em;
+  font-weight: 400;
+  color: white;
+  text-decoration: none;
+}
+
+.about-links a:hover {
+  color: #b44f1e;
+}
+
+/* ====================================================
+   Legal Section
+   ==================================================== */
+.legal h2 {
+  font-weight: 700;
+}
+
+.legal-content {
+  box-sizing: border-box;
+  max-height: 80vh;
+  margin-left: auto;
+  margin-right: 6vw;
+  width: 40%;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  color: white;
+  font-family: "Rajdhani";
+  font-weight: 400;
+  font-size: 1.2em;
+  text-align: right;
+}
+
+.legal-content::-webkit-scrollbar {
+  display: none;
+}
+
+/* ====================================================
+   Learn Section
+   ==================================================== */
+.learn {
+  display: flex;
+  width: 100%;
+}
+
+.learn-content {
+  box-sizing: border-box;
+  max-height: 80vh;
+  margin-right: 1em;
+  margin-left: 1em;
+  width: 40%;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE et Edge */
+  color: white;
+  font-family: "Rajdhani";
+  font-weight: 400;
+  font-size: 1.2em;
+  text-align: left;
+}
+
+.learn-content::-webkit-scrollbar {
+  display: none; /* Chrome, Safari et Opera */
+}
+
+.learn-images {
+  box-sizing: border-box;
+  margin-right: 5%;
+  margin-left: auto;
+  text-align: right;
+  width: 30%;
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE et Edge */
+}
+
+.learn-images img {
+  border: 1px solid white;
+  width: 80%;
+  height: auto;
+  margin-bottom: 1em;
+  cursor: crosshair;
+}
+
+.learn-images::-webkit-scrollbar {
+  display: none;
+}
+
+/* ====================================================
+   Mobile responsive
+   ==================================================== */
+
+@media (max-width: 768px) {
+  nav {
+    justify-content: center;
+    background-color: transparent;
+  }
+
+  .nav-logo {
+    display: none;
+  }
+
+  .menu-text {
+    display: none;
+  }
+
+  .menu-icon {
+    display: flex;
+    opacity: 0.9;
+  }
+
+  .menu-icon:hover {
+    color: #b44f1e;
+  }
+
+  .toggle-sound-button {
+    display: none;
+  }
+
+  .legal-content {
+    width: 85%;
+    margin-right: 10%;
+    text-align: center;
+  }
+
+  .projects-container {
+    align-items: center;
+  }
+
+  .project {
+    width: 65%;
+    height: auto;
+    margin-right: 3%;
+  }
+
+  .normal-image {
+    height: auto;
+  }
+
+  .hover-image {
+    height: auto;
+  }
+
+  .travel-off {
+    display: none;
+  }
+
+  .travel-on {
+    display: block;
+  }
+
+  .learn-content {
+    width: 85%;
+    margin-right: 10%;
+    text-align: center;
+  }
+
+  .learn-images {
+    display: none;
+  }
+
+  #background-music {
+    display: none;
+  }
+}
+
+/* ====================================================
+   Tablet Responsive
+   ==================================================== */
+
+@media (min-width: 769px) and (max-width: 1026px) {
+  .project {
+    width: 60%;
+    height: auto;
+    margin-right: 3%;
+  }
+}
