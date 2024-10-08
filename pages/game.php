@@ -1,12 +1,3 @@
-<video autoplay muted loop playsinline class="background">
-      <source src="assets/videos/background.mp4" type="video/mp4" />
-      <img
-        src="assets/images/background.png"
-        alt="background_img"
-        class="background"
-      />
-  </video>
-
 <section class="home"></section>
     <section class="projects">
       <div class="projects-wrapper">
@@ -23,7 +14,7 @@
               class="hover-image"
             />
             <a
-              href="https://votre-lien.com/projet1"
+              href=""
               class="project-link"
               target="_blank"
               rel="noopener noreferrer"
@@ -52,7 +43,7 @@
               class="hover-image"
             />
             <a
-              href="https://votre-lien.com/projet1"
+              href=""
               class="project-link"
               target="_blank"
               rel="noopener noreferrer"
@@ -81,7 +72,7 @@
               class="hover-image"
             />
             <a
-              href="https://votre-lien.com/projet1"
+              href=""
               class="project-link"
               target="_blank"
               rel="noopener noreferrer"
@@ -110,7 +101,7 @@
               class="hover-image"
             />
             <a
-              href="https://votre-lien.com/projet1"
+              href=""
               class="project-link"
               target="_blank"
               rel="noopener noreferrer"

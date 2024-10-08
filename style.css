@@ -33,7 +33,7 @@ html {
 }
 
 video {
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 #contenu {
@@ -190,6 +190,7 @@ nav label.menu-item {
   padding: 0;
   background-color: black;
   opacity: 0.8;
+  border: none;
 }
 
 .sound-icon {
@@ -226,7 +227,7 @@ nav label.menu-item {
   z-index: 1000;
 }
 
-.vertical-footer label, a {
+.vertical-footer label {
   display: inline-block;
   margin: 0 5px;
   cursor: crosshair;
@@ -244,8 +245,18 @@ nav label.menu-item {
   text-decoration: none;
 }
 
-.visible:hover {
-  color: #ff9933;
+#sound-dependent-link {
+  background-color: transparent;
+  border: none;
+  font-family: "Rajdhani";
+  font-weight: 300;
+  color: white;
+}
+
+#sound-dependent-link:hover {
+  border: 1px solid #b44f1e;
+  color: #b44f1e;
+  font-weight: 700;
 }
 
 /* ====================================================
@@ -326,11 +337,31 @@ section {
   height: 70vh;
   scroll-snap-type: x mandatory;
   -ms-overflow-style: none;
-  scrollbar-width: none;
+  /* scrollbar-width: none; */
 }
 
-.projects-container::-webkit-scrollbar {
+/* .projects-container::-webkit-scrollbar {
   display: none;
+} */
+
+::-webkit-scrollbar{
+	width: 1px;
+  margin: none;
+}
+
+::-webkit-scrollbar-track-piece{
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb{
+	background-color: transparent;
+	outline: 1px solid white;
+	outline-offset: -2px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+	background-color: transparent;
+  outline: 1px solid #b44f1e;
 }
 
 .project {
@@ -592,7 +623,7 @@ section {
 
 @media (min-width: 769px) and (max-width: 1026px) {
   .project {
-    width: 60%;
+    width: 50%;
     height: auto;
     margin-right: 3%;
   }

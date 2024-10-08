@@ -1,12 +1,4 @@
-<video autoplay muted loop playsinline class="background">
-      <source src="assets/videos/background.mp4" type="video/mp4" />
-      <img
-        src="assets/images/background.png"
-        alt="background_img"
-        class="background"
-      />
-    </video>
-    <section class="home"></section>
+<section class="home"></section>
     <section class="projects">
       <div class="projects-wrapper">
         <div class="projects-container" id="projects-container">
@@ -22,7 +14,7 @@
               class="hover-image"
             />
             <a
-              href="https://votre-lien.com/projet1"
+              href=""
               class="project-link"
               target="_blank"
               rel="noopener noreferrer"
@@ -51,7 +43,7 @@
               class="hover-image"
             />
             <a
-              href="https://votre-lien.com/projet1"
+              href=""
               class="project-link"
               target="_blank"
               rel="noopener noreferrer"
@@ -80,7 +72,7 @@
               class="hover-image"
             />
             <a
-              href="https://votre-lien.com/projet1"
+              href=""
               class="project-link"
               target="_blank"
               rel="noopener noreferrer"
@@ -91,7 +83,7 @@
                 class="travel-off"
               />
               <img
-                src="assets/icons/travel/travel_on.svg"
+                src=""
                 alt="Travel Ready"
                 class="travel-on hidden"
               />
@@ -109,7 +101,7 @@
               class="hover-image"
             />
             <a
-              href="https://votre-lien.com/projet1"
+              href=""
               class="project-link"
               target="_blank"
               rel="noopener noreferrer"

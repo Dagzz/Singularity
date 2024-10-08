@@ -49,8 +49,9 @@
   <body>
     <nav>
       <!-- Logo -->
+      <label for="tab1">
       <img src="assets/icons/logo.png" alt="Logo" class="nav-logo" />
-
+      </label>
       <!-- Menu items -->
       <div class="nav-items">
         <label

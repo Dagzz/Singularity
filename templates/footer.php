@@ -3,15 +3,12 @@
     <label for="tab4">About</label>
     <label for="tab5">Logs</label>
     <label for="tab6">Terms</label>
-    <a href="test.html" id="sound-dependent-link" class="hidden">Travel</a>
+    <form id="next-media-form" method="POST" action="index.php" style="display: inline;">
+        <input type="hidden" name="action" value="next_media">
+        <button type="submit" id="sound-dependent-link" class="hidden">TRAVEL</button>
+    </form>
   </footer>
 
-      <!-- Background Music -->
-      <audio
-    id="background-music"
-    src="assets/sounds/musics/ES_Fractals - Of Water.mp3"
-    loop
-  ></audio>
   <!-- JavaScript -->
   <script src="script.js"></script>
 </body>

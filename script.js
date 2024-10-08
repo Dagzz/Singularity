@@ -12,9 +12,7 @@ const navbar = document.querySelector("nav");
 const isDesktop = window.innerWidth > 768;
 const tabs = document.querySelectorAll('input[name="tabs"]');
 const initialTab = document.querySelector('input[name="tabs"]:checked');
-const soundLink = document.getElementById("sound-dependent-link"); // Assurez-vous que cet élément existe dans votre HTML
-
-// Utility Functions
+const soundLink = document.getElementById("sound-dependent-link");
 
 // Function to check if the music is playing
 function isMusicPlaying(audio) {
@@ -82,84 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
         item.textContent = initialText;
         item.style.opacity = 1;
       });
-    });
-  }
-
-  // Scroll management for Projects section
-  const prevButton = document.getElementById("prev-button");
-  const nextButton = document.getElementById("next-button");
-  const projectsContainer = document.getElementById("projects-container");
-  const scrollAmount = 300; // Adjust this value as needed
-
-  // Scroll left function
-  if (prevButton && projectsContainer) {
-    prevButton.addEventListener("click", () => {
-      projectsContainer.scrollBy({
-        top: 0,
-        left: -scrollAmount,
-        behavior: "smooth",
-      });
-    });
-  }
-
-  // Scroll right function
-  if (nextButton && projectsContainer) {
-    nextButton.addEventListener("click", () => {
-      projectsContainer.scrollBy({
-        top: 0,
-        left: scrollAmount,
-        behavior: "smooth",
-      });
-    });
-  }
-
-  // Keyboard navigation for scrolling (left/right arrows)
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowLeft" && projectsContainer) {
-      projectsContainer.scrollBy({
-        top: 0,
-        left: -scrollAmount,
-        behavior: "smooth",
-      });
-    }
-    if (e.key === "ArrowRight" && projectsContainer) {
-      projectsContainer.scrollBy({
-        top: 0,
-        left: scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  });
-
-  // Click-and-drag scrolling
-  if (projectsContainer) {
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    projectsContainer.addEventListener("mousedown", (e) => {
-      isDown = true;
-      projectsContainer.classList.add("active");
-      startX = e.pageX - projectsContainer.offsetLeft;
-      scrollLeft = projectsContainer.scrollLeft;
-    });
-
-    projectsContainer.addEventListener("mouseleave", () => {
-      isDown = false;
-      projectsContainer.classList.remove("active");
-    });
-
-    projectsContainer.addEventListener("mouseup", () => {
-      isDown = false;
-      projectsContainer.classList.remove("active");
-    });
-
-    projectsContainer.addEventListener("mousemove", (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - projectsContainer.offsetLeft;
-      const walk = (x - startX) * 2; // Adjust the speed
-      projectsContainer.scrollLeft = scrollLeft - walk;
     });
   }
 });
